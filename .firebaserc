@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "optimal-timer-321321": {
+      "hosting": {
+        "AngularCliente": [
+          "optimal-timer-321321"
+        ]
+      }
+    }
+  }
+}

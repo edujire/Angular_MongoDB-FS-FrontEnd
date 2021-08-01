@@ -1,0 +1,40 @@
+<!--Contenedor de 5 px arriba-->
+<div class="container mt-5">
+    <div class="row">
+      <!--    columna de 8 y offset para dejar 2 columnas vacias en la izquierda-->
+      <div class="col-lg-8 offset-lg-2">
+        <div class="card">
+          <div class="card-body text-center">
+            <span class="titulo">LISTADO PRODUCTO</span>
+            <button class="btn btn-success float-end" routerLink="/fb/crear-producto">NUEVO</button>
+  <!--          margin top 5-->
+            <table *ngIf="listaProductos.length>0" class="table table-striped mt-5">
+              <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Ubicación</th>
+                <th scope="col">Precio</th>
+                <th scope="col"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor = "let producto of listaProductos">
+                <td scope="col">{{producto.nombre}}</td>
+                <td scope="col">{{producto.categoria}}</td>
+                <td scope="col">{{producto.ubicacion}}</td>
+                <td scope="col">{{producto.precio|currency}}</td>
+                <td>
+                  <i [routerLink]="['/fb/editar-producto',producto._id]" class="fas fa-edit text-primary"></i>
+                  <i (click)="eliminarProducto(producto._id)" class="fas fa-trash text-danger"></i>
+                </td>
+              </tr>
+              <h5 *ngIf="listaProductos.length==0">No se encontraron productos</h5>
+              </tbody>
+            </table>
+            <!-- <h5 *ngIf="listaProductos.length==0">No se encontraron productos</h5> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

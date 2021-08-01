@@ -1,0 +1,10 @@
+.active{
+    opacity: 1 !important;
+}
+.fb-item{
+    color:orange !important;
+    opacity: 0.8;
+}
+.fb-item:hover{
+    opacity: 0.9;
+}
