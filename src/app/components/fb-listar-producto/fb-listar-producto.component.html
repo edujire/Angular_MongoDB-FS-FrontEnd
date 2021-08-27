@@ -6,8 +6,26 @@
         <div class="card">
           <div class="card-body text-center">
             <span class="titulo">LISTADO PRODUCTO</span>
-            <button class="btn btn-success float-end" routerLink="/fb/crear-producto">NUEVO</button>
-  <!--          margin top 5-->
+            <button class="btn btn-success float-end" routerLink="/fb/crear-producto">NUEVO</button><br>
+            <!-- Search bar -->
+            <form [formGroup]="searchForm" class="search-form"> 
+              <mat-form-field appearance="fill">
+                <mat-label>Campo</mat-label>
+                <mat-select formControlName="campo" >
+                  <mat-option [value]="campo" *ngFor="let campo of listaCampos">{{campo}}</mat-option>
+                </mat-select>
+              </mat-form-field>                       
+              <mat-form-field appearance="fill">
+                <input formControlName="valor" class="form-control" matInput type="search"  placeholder="Buscar elemento" #elementoBuscar>
+                <button matSuffix mat-flat-button color="primary" (click)="buscarProductos()">
+                  <mat-icon>search</mat-icon>
+                </button>
+              </mat-form-field>
+            </form>
+            <button matSuffix mat-flat-button class="float-end" color="primary" (click)="obtenerProductos()">
+              Mostrar Todo
+            </button>
+            <!--          margin top 5-->
             <table *ngIf="listaProductos.length>0" class="table table-striped mt-5">
               <thead>
               <tr>

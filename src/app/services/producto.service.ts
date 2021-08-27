@@ -44,4 +44,7 @@ export class ProductoService {
   fsupdateProducto(id:any, producto:any): Promise<any>{
     return this.firestone.collection("producto").doc(id).update(producto);
   }
+  fssearchProducto(key: string,value:string): Observable<any>{
+    return this.firestone.collection("producto",ref=>ref.where(key,"==",value)).snapshotChanges();
+  }
 }

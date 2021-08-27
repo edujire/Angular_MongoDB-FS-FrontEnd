@@ -2,3 +2,16 @@
     cursor: pointer;
     margin-left: 7px;
   }
+mat-option{
+  background-color: white;
+  width: 50%;
+
+}
+mat-option:hover{
+  background-color:gainsboro;
+}
+
+.search-form{
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
